@@ -4,7 +4,7 @@ hi this is for anybody who wants to help.
 this code works unfortunatly, but is identical to the code that does not work; This is a short version of my project which has
 a problem with a view function that does not return upon validate, it is the funtion "books" which does not return on the main
 project. Now I understand Github I will add that latter, but it is a lot larger with several foriegn keys 
-
+The file bilan13 are the items that need to be added to the books one row at a time using the add_book link
 Follow these steps and all should work!!!!!
 
 python3 -m venv env
