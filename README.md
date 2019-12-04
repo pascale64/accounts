@@ -1,7 +1,7 @@
 # accounts
 test
 hi this is for anybody who wants to help.
-this code works unfortunatly, but is identical to the codE that does not work; This is a short version of my project which has
+this code works unfortunatly, but is identical to the code that does not work; This is a short version of my project which has
 a problem with a view function that does not return upon validate, it is the funtion "books" which does not return on the main
 project. Now I understand Github I will add that latter, but it is a lot larger with several foriegn keys 
 
