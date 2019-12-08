@@ -14,7 +14,7 @@ class AddBookForm(FlaskForm):
     credit = IntegerField('Credit')
     montant = FloatField('Montant', validators=[DataRequired()])
     AUX = StringField('Auxilliare')
-    type = StringField('Type')
+    TP = StringField('Type')
     REF = StringField('REF')
     JN = StringField('JN')
     PID = IntegerField('PID')
