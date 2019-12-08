@@ -25,7 +25,7 @@ def books():
         form.credit.default = book.credit
         form.montant.default = book.montant
         form.AUX.default = book.AUX
-        form.type.default = book.type
+        form.TP.default = book.TP
         form.REF.default = book.REF
         form.JN.default = book.JN
         form.PID.default = book.PID
@@ -41,7 +41,7 @@ def books():
                 book.credit = form.credit.data
                 book.montant = form.montant.data
                 book.AUX = form.AUX.data
-                book.type = form.type.data
+                book.TP = form.TP.data
                 book.REF = form.REF.data
                 book.JN = form.JN.data
                 book.PID = form.PID.data
@@ -69,8 +69,8 @@ def books():
 def add_book():
     form = AddBookForm()
     if form.validate_on_submit():
-        obj = Book(id=form.id.data, date=form.date.data, description=form.description.data, debit=form.$
-                  credit=form.credit.data, montant=form.montant.data, AUX=form.AUX.data, type=form.type$
+        obj = Book(id=form.id.data, date=form.date.data, description=form.description.data, debit=form.debit.data,\
+                  credit=form.credit.data, montant=form.montant.data, AUX=form.AUX.data, TP=form.TP.data,\
                   REF=form.REF.data, JN=form.JN.data, PID=form.PID.data, CT=form.CT.data)
         db.session.add(obj)
         db.session.commit()
