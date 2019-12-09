@@ -1,7 +1,6 @@
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request, g, \
     jsonify, current_app
-from flask_paginate import Pagination, get_page_args
 import csv
 from bdf import db
 from bdf.models import  Book
@@ -14,8 +13,6 @@ from bdf.books.forms import AddBookForm
 def books():
     books = Book.query.order_by(Book.date.desc())
     forms = []
-    def get_forms(offset=0, per_page=20):
-        return forms[offset: offset + per_page]
     for book in books:
         form = AddBookForm()
         form.id.default = book.id
@@ -54,15 +51,7 @@ def books():
                 db.session.commit()
                 return redirect(url_for('books.books'))
         form.process()  # Do this after validate_on_submit or breaks CSRF token
-    page, per_page, offset = get_page_args(page_parameter='page',
-                                           per_page_parameter='per_page')
-    total = len(forms)
-    pagination_forms = get_forms(offset=offset, per_page=per_page)
-    pagination = Pagination(page=page, per_page=per_page, total=total)
-    return render_template('books/books.html', books=books, title='books',
-                          page=page, forms=pagination_forms, per_page=per_page, pagination=pagination)
-
-
+    return render_template('books/books.html', books=books, title='books', forms=forms)
 
 
 @bp.route('/books/add_book', methods=('GET', 'POST'))
