@@ -22,6 +22,3 @@ class AddBookForm(FlaskForm):
     submit = SubmitField('Submit')
     modify = SubmitField('Modify')
     delete = SubmitField('Delete')
-
-
-
